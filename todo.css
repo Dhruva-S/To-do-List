@@ -1,0 +1,60 @@
+h1{
+	text-align: center;
+}
+p{
+	text-align: center;
+}
+input.ng-invalid{
+	 background: white;
+}
+div,ul{
+margin: auto;
+  width: 50%;
+  /*border: 3px solid green;*/
+  padding: 10px;
+}
+
+
+ul,span{
+	font-size: 50px;
+}
+
+
+
+.flexContainer{
+	display: flex;
+	justify-content: center;
+
+}
+
+.addtext{
+	flex:0;
+}
+
+
+.topcorner{
+	position: absolute;
+	top:0;
+	right: 70px;
+}
+.topcorner1{
+	position: absolute;
+	top: 50px;
+	right: 60px;
+}
+
+select{
+	width: 200px;
+	height: 30px;
+}
+
+
+.viewtask{
+	position: absolute;
+	top:100;
+	left: 0;
+}
+
+.bg-black{
+	background-color: #27272c;
+}
