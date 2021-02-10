@@ -1,0 +1,161 @@
+<!-- My To-Do List -->
+
+<!DOCTYPE html>
+<html ng-app="a" ng-controller="b">
+<head>
+
+<!--Font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!-- Angular JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!----------------->
+
+
+<!-- BOOTSTRAP 4 -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!----------------->
+
+
+
+<!-- TITLE --->
+
+<title>To-Do List</title>
+
+<!----------------->
+
+<!--HEADING-->
+<h1 class="{{color}}"> My To-Do List</h1>
+<!----------------->
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="todo.css">
+
+<!----------------->
+
+<script src="todo.js"></script>
+
+
+
+<!------------------------OPtion to select background color ------------------------------>
+<p style="font-size:30px;"  class="topcorner" class="{{color}}">Select Theme</p>
+<select class="topcorner1" ng-model="color" placeholder="Choose Color" >
+	
+<option  value="bg bg-light text text-dark" >
+	light
+</option>
+<!--
+<option  style="background: linear-gradient(to bottom, #ffcc00 0%, #ff6600 100%);" value="linear-gradient(to bottom, #ffcc00 0%, #ff6600 100%)">
+	orange
+</option>
+-->
+<option  class="{{color}}" value="bg-black text text-light">
+	dark
+</option>
+
+</select>
+<!---------------------------------------------------------------------------------------->
+
+
+
+
+</head>
+
+
+<body class=" {{color}}">
+
+
+	<!-- Angular JS Directives  -->
+<div align="center" >
+
+<h1>
+<form class="flexContainer">
+<input id="addtext" class="{{color}}" type="text" name="item" ng-model="x" placeholder="Add item" required>
+<button id="addbutton" class="btn btn-info btn-lg" ng-click="additem()">
+<i class="fa fa-plus"></i>
+</button>
+</form>
+<!--button class="btn btn-lg btn-success" value="show" onclick="displaytodo()" >show</button>-->
+</h1>
+    
+
+<!-------------------------------- FILTERS ----------------------------------->
+<div class="viewtask" >
+<p style="font-size:30px;"   class="{{color}}">View Tasks</p>
+<form ng-app="a">
+	     <label class="form-check-label" for="radio1">
+<input type="radio"  value="done" ng-model="f1" ng-click="display()">
+	<p style="font-size:20px;"   class="{{color}}">Finished Tasks</p>
+</label>
+<!--
+<option  style="background: linear-gradient(to bottom, #ffcc00 0%, #ff6600 100%);" value="linear-gradient(to bottom, #ffcc00 0%, #ff6600 100%)">
+	orange
+</option>
+--><br>
+     
+<input type="radio"  value="undone" ng-model="f1" ng-click="display()">
+	<p style="font-size:20px;"   class="{{color}}">Unfinished Tasks</p>
+</form>
+</div>
+<!-------------------------------------------------------------------------->
+
+<!------------------- Display -------->
+
+	
+
+<ul class="list-group">
+	
+	<li class="list-group-item list-group-item-warning " style="text-align:center; list-style-type:decimal;" class=" text-lg" ng-repeat="item in list">
+	 <a href="#" class="text text-dark" title="Unfinished task !" data-toggle="popover" data-trigger="focus" data-content="Click anywhere in the document to close this popover">
+	{{item}}
+	</a>
+
+		<button class="btn btn-success btn-lg"  ng-click="finishedtask($index)" >
+		<i class="fa fa-check"></i>
+		</button>
+
+
+		<button class="btn btn-danger btn-lg"  ng-click="removeitem($index)">
+		<i class="fa fa-trash"></i>
+		</button>
+	
+</li>
+
+
+	<!--</li>-->
+</ul>
+
+
+
+
+<!--</ul>-->
+</div>
+
+
+
+
+<!-------End of display ---------->
+
+
+<!------------End of Angular JS Directives ----->
+
+
+
+</body>
+
+</html>
